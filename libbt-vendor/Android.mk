@@ -67,6 +67,10 @@ LOCAL_CFLAGS += -DBT_NV_SUPPORT
 
 include $(LOCAL_PATH)/vnd_buildcfg.mk
 
+ifeq ($(PROPRIETARY_BLOBS_EXIST),true)
+#include $(BUILD_SHARED_LIBRARY)
+else
 include $(BUILD_SHARED_LIBRARY)
+endif
 
 endif # BOARD_HAVE_BLUETOOTH_QCOM
